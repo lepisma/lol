@@ -47,7 +47,7 @@ def prepare_lossy_examples(files: List[str], output_dir: str, transforms: List[s
         sp.run(command, shell=True)
 
         output_file = os.path.join(output_dir, os.path.basename(f))
-        command = f"ffmpeg -i {tmp_file} {base_transform} {shlex.quote(output_file)}"
+        command = f"ffmpeg -i {tmp_file} {base_transform} {shlex.quote(output_file)} -y"
         sp.run(command, shell=True)
 
 
