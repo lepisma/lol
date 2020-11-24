@@ -1,6 +1,6 @@
 #+TITLE: eh
-[[
-https://img.shields.io/github/v/tag/lepisma/eh.svg?style=flat-square]]
+
+[[https://img.shields.io/github/v/tag/lepisma/eh.svg?style=flat-square]]
 
 Tell whether a given wav has gone through lossy encoding in its lifetime.
 
