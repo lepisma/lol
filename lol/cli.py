@@ -56,7 +56,7 @@ def main():
 
     if args["train"]:
         with open(args["--transforms-file"]) as fp:
-            transforms = [l.strip() for l in fp.readlines()]
+            transforms = [line.strip() for line in fp.readlines()]
 
         files = list_audios(args["--audio-dir"])
 
