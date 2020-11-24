@@ -9,6 +9,7 @@ Options:
   --transforms-file=<transforms-file>      Plain text file with lines mapping to ffmpeg lossy transforms.
 """
 
+import csv
 import os
 import pickle
 import random
@@ -18,7 +19,6 @@ from glob import glob
 from typing import List
 
 import librosa
-import pandas as pd
 from docopt import docopt
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
@@ -94,4 +94,9 @@ def main():
 
         audios = [librosa.load(f, sr=8000, mono=True, duration=10) for f in tqdm(files)]
         preds = pipeline.predict(audios)
-        pd.DataFrame({"filepath": files, "pred": preds}).to_csv(args["--output-csv"], index=None)
+
+        with open(args["--output-csv"], "w") as fp:
+            writer = csv.writer(fp)
+            writer.writerow(["filepath", "pred"])
+            for f, p in zip(files, preds):
+                writer.writerow([f, p])
