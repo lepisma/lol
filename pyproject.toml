@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lol"
-version = "0.1.2"
+version = "0.2.0"
 description = "Find whether an audio is lossless or lossy"
 authors = ["Abhinav Tushar <abhinav@lepisma.xyz>"]
 license = "GPLv-3.0"
