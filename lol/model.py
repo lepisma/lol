@@ -8,7 +8,7 @@ import librosa
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from eh.types import Audio
+from lol.types import Audio
 
 
 class Featurizer(BaseEstimator, TransformerMixin):

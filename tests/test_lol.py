@@ -1,4 +1,4 @@
-from eh import __version__
+from lol import __version__
 
 
 def test_version():
