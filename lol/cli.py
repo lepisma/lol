@@ -8,10 +8,12 @@ Usage:
 
 import os
 import pickle
+import random
+import shlex
+import subprocess as sp
 from glob import glob
 from typing import List
 
-import ffmpeg
 import librosa
 import pandas as pd
 from docopt import docopt
@@ -30,12 +32,20 @@ def list_audios(directory: str) -> List[str]:
 
 
 def prepare_lossy_examples(files: List[str], output_dir: str, transforms: List[str]):
+    random.seed(1234)
+
     # HACK:
     tmp_file = "/tmp/lol.mp3"
+    base_transform = "-f wav -ar 8k"
+
     for f in tqdm(files):
-        basename = os.path.basename(f)
-        ffmpeg.input(f).output(tmp_file, f="mp3").overwrite_output().run()
-        ffmpeg.input(tmp_file).output(os.path.join(output_dir, basename), f="wav", ar="8k").run()
+        transform = random.choice(transforms)
+        command = f"ffmpeg -i {shlex.quote(f)} {transform} {tmp_file} -y"
+        sp.run(command, shell=True)
+
+        output_file = os.path.join(output_dir, os.path.basename(f))
+        command = f"ffmpeg -i {tmp_file} {base_transform} {shlex.quote(output_file)}"
+        sp.run(command, shell=True)
 
 
 def main():
