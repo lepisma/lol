@@ -1,0 +1,6 @@
+#+TITLE: eh
+
+Tell whether a given wav has gone through lossy encoding in its lifetime.
+
+/The API is unstable and will change, focusing on getting the results right for
+now./

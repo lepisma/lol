@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "eh"
+version = "0.1.0"
+description = "Find whether an audio is lossy or not"
+authors = ["Your Name <you@example.com>"]
+license = "GPLv-3.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+librosa = "^0.8.0"
+docopt = "^0.6.2"
+tqdm = "^4.53.0"
+PyYAML = "^5.3.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.1.2"
+
+[tool.poetry.scripts]
+eh = "eh.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
