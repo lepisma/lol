@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eh"
-version = "0.1.0"
+version = "0.1.1"
 description = "Find whether an audio is lossy or not"
 authors = ["Your Name <you@example.com>"]
 license = "GPLv-3.0"
