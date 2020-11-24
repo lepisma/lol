@@ -48,3 +48,6 @@ As compared to regular filters:
    macro avg       0.93      0.94      0.93       214
 weighted avg       0.94      0.93      0.93       214
 #+end_example
+
+Of course you might get more mileage by complicating the model, but this looks
+like a neat feature trick for the problem.
