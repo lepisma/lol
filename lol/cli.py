@@ -4,6 +4,9 @@ lol
 Usage:
   lol train --audio-dir=<audio-dir> --transforms-file=<transforms-file> --output-model=<output-model>
   lol --audio-dir=<audio-dir> --model=<model> --output-csv=<output-csv>
+
+Options:
+  --transforms-file=<transforms-file>      Plain text file with lines mapping to ffmpeg lossy transforms.
 """
 
 import os
