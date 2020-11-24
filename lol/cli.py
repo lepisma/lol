@@ -43,11 +43,11 @@ def prepare_lossy_examples(files: List[str], output_dir: str, transforms: List[s
 
     for f in tqdm(files):
         transform = random.choice(transforms)
-        command = f"ffmpeg -i {shlex.quote(f)} {transform} {tmp_file} -y"
+        command = f"ffmpeg -i {shlex.quote(f)} {transform} {tmp_file} -y -hide_banner -loglevel warning"
         sp.run(command, shell=True)
 
         output_file = os.path.join(output_dir, os.path.basename(f))
-        command = f"ffmpeg -i {tmp_file} {base_transform} {shlex.quote(output_file)} -y"
+        command = f"ffmpeg -i {tmp_file} {base_transform} {shlex.quote(output_file)} -y -hide_banner -loglevel warning"
         sp.run(command, shell=True)
 
 
