@@ -4,3 +4,18 @@ Tell whether a given wav has gone through lossy encoding in its lifetime.
 
 /The API is unstable and will change, focusing on getting the results right for
 now./
+
+Eh needs examples of pure lossless audios of your use case (the use case
+shouldn't matter much but this has to be validated) and a list of potential
+filters. Then it trains a model to predict whether a new set of audios is
+lossless (1) or not (0).
+
+#+begin_src shell
+Eh!
+
+Usage:
+  eh train --audio-dir=<audio-dir> --config-yaml=<config-yaml> --output-model=<output-model>
+  eh --audio-dir=<audio-dir> --model=<model> --output-csv=<output-csv>
+#+end_src
+
+Sample config is provided in ~./resources/~ directory.
