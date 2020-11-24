@@ -22,3 +22,29 @@ Options:
 #+end_src
 
 Sample transforms file is present in ~./resources/~ directory.
+
+** Modeling notes
+
+Flipped mel filters give the following test results on a wav dataset:
+#+begin_example
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       112
+           1       1.00      1.00      1.00       102
+
+    accuracy                           1.00       214
+   macro avg       1.00      1.00      1.00       214
+weighted avg       1.00      1.00      1.00       214
+#+end_example
+
+As compared to regular filters:
+#+begin_example
+              precision    recall  f1-score   support
+
+           0       0.96      0.91      0.94       112
+           1       0.91      0.96      0.93       102
+
+    accuracy                           0.93       214
+   macro avg       0.93      0.94      0.93       214
+weighted avg       0.94      0.93      0.93       214
+#+end_example
